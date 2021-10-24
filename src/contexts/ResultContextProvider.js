@@ -6,7 +6,7 @@ const baseUrl = "https://google-search3.p.rapidapi.com/api/v1";
 export const ResultCotextProvider = ({children}) => {
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [searchTerm, setSearchTerm] = useState("Ronaldinho");
+    const [searchTerm, setSearchTerm] = useState("Bitcoin");
 
     const getResults = async (type) => {
         setIsLoading(true);
@@ -16,7 +16,7 @@ export const ResultCotextProvider = ({children}) => {
             headers: {
                 'x-user-agent': 'desktop',
                 'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-                'x-rapidapi-key': '5275a8e1dcmshe6cde61534690eap13333ejsncffe8ac2d285'
+                'x-rapidapi-key': process.env.REACT_APP_API_KEY,
             }
         });
 
